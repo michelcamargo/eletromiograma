@@ -1,4 +1,7 @@
 /.mypy_cache
 /.vscode
 /r.csv
+/.Scripts
+/.Lib
+/.Include
 /readme.txt

@@ -169,7 +169,7 @@ class GUI:
         # input_port = int(self.inputPortaGraph1.text())
         # connected = self.client1.criarConexao(input_ip, input_port)
 
-        # Meu Ip (Conectar direto):
+        # Ip local (Conexão rápida - dev):
         input_ip = str("10.0.0.105")
         input_port = int("2222")
         connected = self.client1.criarConexao(input_ip, input_port)
@@ -253,16 +253,16 @@ class GUI:
             self.adquireDataGraph1(value)
 
     def trySave(self):
+        self.client1.setReadyData(self.dataGraph1)
         fileName = self.client1.getHeader() + ".csv"
 
         self.labelStatusGraph1.setText("Salvando " + fileName)
 
-        if(self.client1.writecsv(self.dataGraph1)):
+        if(self.client1.writecsv()):
             self.labelStatusGraph1.setText(fileName + " salvo.")
 
         else:
             self.labelStatusGraph1.setText(fileName + " não salvo.")
-
 
     def start(self):
         self.win.show()

@@ -42,7 +42,7 @@ class Server:
 
     def connect(self, ip, porta):
         try:
-            # SOCK_DGRAM -> UDP CONNECTION
+            # SOCK_DGRAM == UDP CONNECTION
             self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, 0)
             self.sock.setblocking(False)
             self.sock.bind((ip, porta))
@@ -66,7 +66,7 @@ class Server:
             self.setTarget(addr)
 
             if(msg != None):
-                # print("msg acc:", msg)
+                # print("accomplished:", msg)
                 self.setData(msg)
                 return True
 
@@ -75,8 +75,7 @@ class Server:
 
     def sendMessage(self, msg):
         try:
-            print("sending \"", msg, "\"to:", self.getTarget())
-
+            # print("sending \"", msg, "\"to:", self.getTarget())
             ret = self.sock.sendto(msg.encode('utf-8'), self.getTarget())
 
         except:

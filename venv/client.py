@@ -8,12 +8,19 @@ class Client:
 
     def __init__(self):
         self.header = "default"
+        self.readyData = None
 
     def getHeader(self):
         return self.header
 
     def setHeader(self, headTitle):
         self.header = headTitle
+
+    def setReadyData(self, dataGraph):
+        self.readyData = dataGraph
+
+    def getReadyData(self):
+        return self.readyData
 
     def criarConexao(self, ip, port):
 
@@ -55,11 +62,9 @@ class Client:
 
     # Retorna ao plotable o valor ou false
     def dataControl(self, msg):
-
         try:
             # Número inteiro
             if(int(msg)):
-
                 dataLimit = [-1024, 1024]
 
                 # Retorna o número plotável
@@ -88,15 +93,16 @@ class Client:
 
             validCmd = self.cmdHandler(msg)
 
-            if(not(validCmd)):
-                print("invalid command.")
+            # if(not(validCmd)):
+            # print("not a command.")
 
         # Referência de ambiente csv ($)
         elif(bool(re.match(rWriteRef, msg))):
             msg = msg.replace(writeRef, "")
-            print("Enviroment ->", msg)
+            print("Ambiente: ", msg)
             self.setHeader(msg)
 
+    # Interpretador de comandos
     def cmdHandler(self, cmd):
 
         # cmdList = {
@@ -106,7 +112,7 @@ class Client:
         # }
 
         if(cmd == "con"):
-            self.server1.sendMessage("connected and receiving.")
+            self.server1.sendMessage("connected")
 
             return True
 
@@ -115,7 +121,6 @@ class Client:
 
             if(self.writecsv()):
                 info += " salvo."
-
                 self.server1.sendMessage(info)
 
                 return True
@@ -127,12 +132,13 @@ class Client:
         else:
             return False
 
-    def writecsv(self, dataGraph):
+    def writecsv(self):
         try:
             fileName = self.getHeader() + ".csv"
-            # with open("data.csv", "a", newline='') as file:
 
+            # with open("data.csv", "a", newline='') as file:
             with open(fileName, "a", newline='') as file:
+                dataGraph = self.getReadyData()
                 # writer = csv.writer(file, delimiter=",")
 
                 writer = csv.writer(file)
