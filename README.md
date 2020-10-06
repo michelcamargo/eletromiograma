@@ -5,8 +5,8 @@ a partir dos sinais elétricos liberados pelos mesmos, recolhendo informações 
 
 * Leitura de valores enviados pelo sensor (servidor UDP)
 * Plotagem gráfica dos dados recebidos em "tempo real"
-* Armazenamento de dados em arquivos .csv (chave: $)
-* Interpretação de comandos de entrada (chave: #)
+* Controle de dados por arquivos de extensão .csv (chave para definir ambiente: $)
+* Interpretação de comandos de entrada (Tag comando: #)
 
 
 ## Desenvolvimento
