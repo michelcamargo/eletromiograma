@@ -4,7 +4,7 @@ A eletromiografia consiste num exame que avalia a função muscular e diagnostic
 a partir dos sinais elétricos liberados pelos mesmos, recolhendo informações acerca da atividade muscular por meio de eletrodos.
 
 * Leitura de valores enviados pelo sensor (servidor UDP)
-* Plotagem gráfica de valores vindos do sensor
+* Plotagem gráfica dos dados recebidos em "tempo real"
 * Armazenamento de dados em arquivos .csv (chave: $)
 * Interpretação de comandos de entrada (chave: #)
 
