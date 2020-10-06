@@ -23,6 +23,6 @@ Ao receber uma mensagem válida (valor numérico inteiro), o interpretador defin
 * NumPy: Numerical and multi-dimentional array computing
 > pip install numpy
 
-* PyQt5: GUI and more cool stuff
+* PyQt5: GUI and cool stuff
 > pip install pyqt5
 
