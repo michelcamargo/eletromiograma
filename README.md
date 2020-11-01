@@ -7,8 +7,8 @@ Ao receber uma mensagem válida (valor numérico inteiro), o interpretador defin
 
 * Leitura de valores enviados pelo sensor (servidor UDP)
 * Plotagem gráfica dos dados recebidos em "tempo real"
-* Controle de dados por arquivos de extensão .csv (chave para definir ambiente: $)
-* Interpretação de comandos de entrada (Tag comando: #)
+* Controle de dados por arquivos de extensão .csv ( $ambiente )
+* Interpretação de comandos de entrada ( #comando )
 
 
 ## Desenvolvimento
@@ -17,12 +17,15 @@ Ao receber uma mensagem válida (valor numérico inteiro), o interpretador defin
 * Python Package Index (update)
 > python -m pip install --upgrade pip
 
-* PyQtGraph: Scientific Graphics and GUI Library for Python
+* Gráficos e interface científica: PyQtGraph
+***http://www.pyqtgraph.org***
 > pip install pyqtgraph
 
-* NumPy: Numerical and multi-dimentional array computing
+* Computação de arrays numéricos multi-dimensionais: NumPy
+***https://numpy.org***
 > pip install numpy
 
-* PyQt5: GUI and cool stuff
+* Interface e outras coisas legais: PyQt5
+***https://pypi.org/project/PyQt5/***
 > pip install pyqt5
 
